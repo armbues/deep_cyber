@@ -6,11 +6,25 @@ After experimenting with Justin Johnson's awesome [torch-rnn](https://github.com
 
 ## Data collection
 
-To collect tweets from the Twitter timelines of security companies I wrote a short Python script **timeline.py** that utilizes the [python-twitter](https://github.com/bear/python-twitter) library. A Twitter API key can be obtained by registering an app on the [Twitter Application Management](https://apps.twitter.com/) portal.
+To collect tweets from the Twitter timelines of security companies I wrote a short Python script **timeline.py** that utilizes the [python-twitter](https://github.com/bear/python-twitter) library.
 
 You can install the required python-twitter library using:
 ```
 pip install python-twitter
+```
+
+Edit the **timeline.py** script to include your Twitter API key:
+```
+TWITTER_CONSUMER_KEY = '<TWITTER_CONSUMER_KEY>'
+TWITTER_CONSUMER_SECRET = '<TWITTER_CONSUMER_SECRET>'
+TWITTER_ACCESS_TOKEN_KEY = '<TWITTER_ACCESS_TOKEN_KEY>'
+TWITTER_ACCESS_TOKEN_SECRET = '<TWITTER_ACCESS_TOKEN_SECRET>'
+```
+
+The script requests all available tweets from the Twitter timeline of the specified screen name and stores it in a txt file, for example:
+```
+$ python timeline.py @deep_cyber
+...
 ```
 
 ## EC2 / torch-rnn setup
